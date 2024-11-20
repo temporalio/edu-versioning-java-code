@@ -49,7 +49,6 @@ the code.
    ```bash
    temporal workflow show \
       --workflow-id loan-processing-workflow-customer-a100 \
-      --fields long  \
       --output json > history_for_original_execution.json
    ```
    - You an also use the `ex1h` command within the GitPod environment to save yourself some typing.
