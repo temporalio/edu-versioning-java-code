@@ -49,7 +49,6 @@ the code.
    ```bash
    temporal workflow show \
       --workflow-id loan-processing-workflow-customer-a100 \
-      --fields long  \
       --output json > history_for_original_execution.json
    ```
    - You an also use the `ex1h` command within the GitPod environment to save yourself some typing.
@@ -58,8 +57,8 @@ the code.
      history navigate to the **Event History** section
    of the detail page for this execution, and then click the
    **Download** button just above the table showing the Event History.
-   In the **Download JSON** dialog, disable the
-   **Decode Event History** toggle, and then click **Download**. Save
+   In the **Download JSON** dialog, leave the
+   **Encoded** options as is, and then click **Download**. Save
    the file as `history_for_original_execution.json` in your
    `practice` directory.
 1. In the next section, you will make and deploy an incompatible
