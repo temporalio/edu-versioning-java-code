@@ -16,14 +16,11 @@ the complete version in the `solution` subdirectory.
 ## Part A: Run a Workflow to Completion
 
 1. Change directories to the `exercises/version-workflow/practice` directory.
-   1. If you're in the GitPod environment you can run `ex1`
 1. Run `mvn clean compile exec:java -Dexec.mainClass="getversion.LoanProcessingWorker"`
    in a terminal to start a Worker
-   1. If you're in the GitPod environment, you can run `ex1w`
 1. Run `mvn clean compile exec:java -Dexec.mainClass="getversion.Starter" -Dexec.args="a100"`
    in another terminal. This will start a Workflow that processes the loan for
    customer ID `a100`.
-   1. If you're in the GitPod environment, you can run `ex1st`
 1. Let this Workflow run to completion. This customer has a loan
    with 10 payments, and since the Workflow in this exercise uses
    a Timer to add a three-second delay between each payment, it
@@ -56,9 +53,7 @@ the complete version in the `solution` subdirectory.
 1. Compile the code with `mvn clean compile`
 1. Restart the Worker by pressing Ctrl-C in the terminal window
    from step 1 and running the `mvn clean compile exec:java -Dexec.mainClass="getversion.LoanProcessingWorker"` command again
-   1. If you're in the GitPod environment, you can run `ex1w`
 1. Run the Workflow again: `mvn clean compile exec:java -Dexec.mainClass="getversion.Starter" -Dexec.args="a100"`
-   1. If you're in the GitPod environment, you can run `ex1st`
 1. Use the Web UI to verify that the Workflow Execution from the
    previous step is running before proceeding with the next part
    of this exercise.
@@ -77,7 +72,6 @@ the complete version in the `solution` subdirectory.
 1. Compile the code with `mvn clean compile`
 1. Restart the Worker by then running the
    `mvn clean compile exec:java -Dexec.mainClass="getversion.LoanProcessingWorker"` command again.
-   1. If you're in the GitPod environment, you can run `ex1w`
 1. The change you just made to the Workflow logic takes effect immediately, although
    the Worker immediately begins using the updated code you
    deployed, it may take up to 90 seconds before that is
@@ -158,7 +152,6 @@ is `1`.
    the previous execution.
 1. Restart the Worker by pressing Ctrl-C in the terminal
    window where you started it and then running the `mvn clean compile exec:java -Dexec.mainClass="getversion.LoanProcessingWorker"` command again.
-   1. If you're in the GitPod environment, you can run `ex1w`
 1. Return to the detail page for this Workflow Execution
 1. Click the downward-facing arrow to the right of the
    **Request Cancellation** menu near the upper-right portion of
