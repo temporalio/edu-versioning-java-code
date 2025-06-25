@@ -1,4 +1,4 @@
-# Exercise #1: Version the Change with the `getVersion` API
+# Exercise #1: Version the Change with the Patching API
 
 During this exercise, you will
 
@@ -6,7 +6,7 @@ During this exercise, you will
 - Make and deploy a change that does not affect compatibility
 - Make and deploy a change that breaks compatibility, causing a non-deterministic error
 - Develop an automated test to check compatibility with previous executions
-- Use the `getVersion` API to implement versioning for the Workflow
+- Use the Patching API to implement versioning for the Workflow
 
 Make your changes to the code in the `practice` subdirectory (look for
 `TODO` comments that will guide you to where you should make changes to
@@ -34,7 +34,6 @@ the complete version in the `solution` subdirectory.
       --workflow-id loan-processing-workflow-customer-a100 \
       --output json > history_for_original_execution.json
    ```
-   - You an also use the `ex1h` command within the GitPod environment to save yourself some typing.
    - **NOTE** You can also download the event history from the Web UI, however, this
      is currently not supported in the GitPod environment. To download the
      history navigate to the **Event History** section
@@ -44,17 +43,17 @@ the complete version in the `solution` subdirectory.
    **Encoded** options as is, and then click **Download**. Save
    the file as `history_for_original_execution.json` in your
    `practice` directory.
-1. In the next section, you will make and deploy an incompatible
+2. In the next section, you will make and deploy an incompatible
    change, causing a non-deterministic error for an open execution.
    To allow time for you to do these things, edit the `LoanProcessingWorkflowImpl.java`
    file and change the duration in the `Workflow.sleep` call from
    3 seconds to 90 seconds.
-1. Save your change to the `LoanProcessingWorkflowImpl.java` file and exit the editor
-1. Compile the code with `mvn clean compile`
-1. Restart the Worker by pressing Ctrl-C in the terminal window
+3. Save your change to the `LoanProcessingWorkflowImpl.java` file and exit the editor
+4. Compile the code with `mvn clean compile`
+5. Restart the Worker by pressing Ctrl-C in the terminal window
    from step 1 and running the `mvn clean compile exec:java -Dexec.mainClass="getversion.LoanProcessingWorker"` command again
-1. Run the Workflow again: `mvn clean compile exec:java -Dexec.mainClass="getversion.Starter" -Dexec.args="a100"`
-1. Use the Web UI to verify that the Workflow Execution from the
+6. Run the Workflow again: `mvn clean compile exec:java -Dexec.mainClass="getversion.Starter" -Dexec.args="a100"`
+7. Use the Web UI to verify that the Workflow Execution from the
    previous step is running before proceeding with the next part
    of this exercise.
 
@@ -107,14 +106,14 @@ and responds by throwing the non-deterministic error you see.
 3. Run `mvn clean compile test`. You should find that this fails, which confirms
    altering the execution order of the `sendThankYouToCustomer`
    Activity) breaks compatibility. In the final part of this
-   exercise, you will use the `getVersion` API to implement
+   exercise, you will use the Patching API to implement
    versioning for your change, thereby making it compatible
    with Workflow Executions started before or after the change.
 
-## Part D: Version the Change with the `getVersion` API
+## Part D: Version the Change with the Patching API
 
 Just above the loop, where the Activity call was prior to
-the change, add the following lines:
+the change, add a call to `GetVersion`:
 
 ```java
 String versionKey = "MovedThankYouAfterLoop";
@@ -139,33 +138,33 @@ is `1`.
    words, copy the same lines you moved after the loop to inside the
    braces for this conditional statement, so that this Activity will be
    called if the condition evaluates to `true`.
-1. Wrap the code you previously moved after the loop in a
+2. Wrap the code you previously moved after the loop in a
    conditional statement that tests if `version` is equal to
    `1`. This will handle the Activity for Workflow
    Executions started after the change.
-1. Change the duration of the `Workflow.sleep` statement at the
+3. Change the duration of the `Workflow.sleep` statement at the
    bottom of the loop back to 3 seconds. This is unrelated to
    versioning and changing the duration of a timer does not require versioning,
    but will help you see the results more quickly.
-1. Run `mvn clean compile test` again. You should find it succeeds this time,
-   since you've used the `getVersion` API to restore compatibility with
+4. Run `mvn clean compile test` again. You should find it succeeds this time,
+   since you've used the Patching API to restore compatibility with
    the previous execution.
-1. Restart the Worker by pressing Ctrl-C in the terminal
+5. Restart the Worker by pressing Ctrl-C in the terminal
    window where you started it and then running the `mvn clean compile exec:java -Dexec.mainClass="getversion.LoanProcessingWorker"` command again.
-1. Return to the detail page for this Workflow Execution
-1. Click the downward-facing arrow to the right of the
+6. Return to the detail page for this Workflow Execution
+7. Click the downward-facing arrow to the right of the
    **Request Cancellation** menu near the upper-right portion of
    the page and select the **Reset** option.
    - Select the last **WorkflowTaskCompleted** event to reset to
    - Enter "Using versioning to fix a bad deployment" as the reason
    - Click the **Confirm** button
-1. The Workflow will now be terminated a new Workflow started, resuming from
+8. The Workflow will now be terminated a new Workflow started, resuming from
    the specified Workflow Task. Return to the dashboard and view progress of
    that Workflow Execution.
    1. The WebUI may still show a warning about **Reset Workflow** at the top of
       the page. Monitor the Event History and the log output from the Worker to
       confirm that progress has resumed.
-1. Enable the auto-refresh feature using the toggle button near
+9. Enable the auto-refresh feature using the toggle button near
    the top of the page. You should find that the Workflow Execution
    completes successfully within the next 30 seconds.
 
