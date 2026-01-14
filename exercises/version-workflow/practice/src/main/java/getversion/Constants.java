@@ -2,6 +2,6 @@ package getversion;
 
 public class Constants {
 
-  public static final String taskQueueName = "loan-processing-workflow-taskqueue";
+  public static final String TASK_QUEUE_NAME = "loan-processing-workflow-taskqueue";
 
 }
