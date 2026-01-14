@@ -1,17 +1,12 @@
 package getversion;
 
+import getversion.model.ChargeInput;
+import getversion.model.CustomerInfo;
+import io.temporal.activity.ActivityOptions;
+import io.temporal.common.SearchAttributeKey;
+import io.temporal.workflow.Workflow;
 import org.slf4j.Logger;
 
-import getversion.model.CustomerInfo;
-import getversion.model.ChargeInput;
-
-import io.temporal.workflow.Workflow;
-import io.temporal.common.SearchAttributeKey;
-import getversion.LoanProcessingActivities;
-import getversion.LoanProcessingWorkflow;
-import io.temporal.activity.ActivityOptions;
-
-import java.util.Arrays;
 import java.time.Duration;
 import java.util.List;
 

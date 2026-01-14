@@ -5,9 +5,6 @@ import io.temporal.serviceclient.WorkflowServiceStubs;
 import io.temporal.worker.Worker;
 import io.temporal.worker.WorkerFactory;
 
-import getversion.LoanProcessingActivitiesImpl;
-import getversion.LoanProcessingWorkflowImpl;
-
 public class LoanProcessingWorker {
   public static void main(String[] args) {
 

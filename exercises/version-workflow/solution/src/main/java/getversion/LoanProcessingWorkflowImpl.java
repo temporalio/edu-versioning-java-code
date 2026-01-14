@@ -1,16 +1,15 @@
 package getversion;
 
-import org.slf4j.Logger;
-
-import getversion.model.CustomerInfo;
 import getversion.model.ChargeInput;
-
+import getversion.model.CustomerInfo;
+import io.temporal.activity.ActivityOptions;
 import io.temporal.common.SearchAttributeKey;
 import io.temporal.workflow.Workflow;
-import io.temporal.activity.ActivityOptions;
+import org.slf4j.Logger;
+
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
-import java.time.Duration;
 
 public class LoanProcessingWorkflowImpl implements LoanProcessingWorkflow {
 

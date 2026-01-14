@@ -2,7 +2,6 @@ package getversion;
 
 import getversion.model.ChargeInput;
 import getversion.model.CustomerInfo;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

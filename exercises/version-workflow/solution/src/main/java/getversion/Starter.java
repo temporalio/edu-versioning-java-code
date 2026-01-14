@@ -1,9 +1,7 @@
 package getversion;
 
-import getversion.model.ChargeInput;
 import getversion.model.CustomerInfo;
 import getversion.model.SimpleCustomerMap;
-
 import io.temporal.client.WorkflowClient;
 import io.temporal.client.WorkflowOptions;
 import io.temporal.serviceclient.WorkflowServiceStubs;
@@ -24,7 +22,8 @@ public class Starter {
 
     WorkflowOptions options = WorkflowOptions.newBuilder()
         .setWorkflowId("loan-processing-workflow-customer-" + info.getCustomerID())
-        .setTaskQueue(Constants.taskQueueName).build();
+        .setTaskQueue(Constants.taskQueueName)
+        .build();
 
     LoanProcessingWorkflow workflow = client.newWorkflowStub(LoanProcessingWorkflow.class, options);
 
