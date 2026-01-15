@@ -8,6 +8,7 @@ import io.temporal.workflow.Workflow;
 import org.slf4j.Logger;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
 public class LoanProcessingWorkflowImpl implements LoanProcessingWorkflow {
