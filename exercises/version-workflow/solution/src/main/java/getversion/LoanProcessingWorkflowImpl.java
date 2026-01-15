@@ -18,7 +18,9 @@ public class LoanProcessingWorkflowImpl implements LoanProcessingWorkflow {
   public static final SearchAttributeKey<List<String>> TEMPORAL_CHANGE_VERSION = SearchAttributeKey.forKeywordList("TemporalChangeVersion");
 
   ActivityOptions options =
-      ActivityOptions.newBuilder().setStartToCloseTimeout(Duration.ofSeconds(5)).build();
+      ActivityOptions.newBuilder()
+        .setStartToCloseTimeout(Duration.ofSeconds(5))
+        .build();
 
   private final LoanProcessingActivities activities =
       Workflow.newActivityStub(LoanProcessingActivities.class, options);
