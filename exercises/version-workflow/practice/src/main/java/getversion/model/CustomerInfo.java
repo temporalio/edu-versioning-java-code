@@ -1,7 +1,7 @@
 package getversion.model;
 
 public class CustomerInfo {
-  private String customerID;
+  private String customerId;
   private String name;
   private String emailAddress;
   private int amount;
@@ -9,9 +9,8 @@ public class CustomerInfo {
 
   public CustomerInfo() {}
 
-  public CustomerInfo(String customerID, String name, String emailAddress, int amount,
-      int numberOfPeriods) {
-    this.customerID = customerID;
+  public CustomerInfo(String customerId, String name, String emailAddress, int amount, int numberOfPeriods) {
+    this.customerId = customerId;
     this.name = name;
     this.emailAddress = emailAddress;
     this.amount = amount;
@@ -19,11 +18,11 @@ public class CustomerInfo {
   }
 
   public String getCustomerID() {
-    return customerID;
+    return customerId;
   }
 
-  public void setCustomerID(String customerID) {
-    this.customerID = customerID;
+  public void setCustomerID(String customerId) {
+    this.customerId = customerId;
   }
 
   public String getName() {

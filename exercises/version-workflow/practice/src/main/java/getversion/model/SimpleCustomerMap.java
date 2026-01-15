@@ -15,8 +15,7 @@ public class SimpleCustomerMap implements CustomerInfoDatabase {
 
     CustomerInfo customer01 = new CustomerInfo("a100", "Ana Garcia", "ana@example.com", 500, 10);
     CustomerInfo customer02 = new CustomerInfo("a101", "Amit Singh", "asingh@example.com", 250, 15);
-    CustomerInfo customer03 =
-        new CustomerInfo("a102", "Mary O'Connor", "marymo@example.com", 425, 12);
+    CustomerInfo customer03 = new CustomerInfo("a102", "Mary O'Connor", "marymo@example.com", 425, 12);
 
     customers.put(customer01.getCustomerID(), customer01);
     customers.put(customer02.getCustomerID(), customer02);
@@ -24,8 +23,8 @@ public class SimpleCustomerMap implements CustomerInfoDatabase {
   }
 
   @Override
-  public CustomerInfo get(String customerID) {
-    CustomerInfo info = customers.get(customerID);
+  public CustomerInfo get(String customerId) {
+    CustomerInfo info = customers.get(customerId);
     if (info == null) {
       throw new RuntimeException("Customer ID does not exist in the database");
     }
