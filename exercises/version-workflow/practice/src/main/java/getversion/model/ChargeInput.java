@@ -1,26 +1,26 @@
 package getversion.model;
 
 public class ChargeInput {
-  private String customerID;
+  private String customerId;
   private int amount;
   private int periodNumber;
   private int numberOfPeriods;
 
   public ChargeInput() {}
 
-  public ChargeInput(String customerID, int amount, int periodNumber, int numberOfPeriods) {
-    this.customerID = customerID;
+  public ChargeInput(String customerId, int amount, int periodNumber, int numberOfPeriods) {
+    this.customerId = customerId;
     this.amount = amount;
     this.periodNumber = periodNumber;
     this.numberOfPeriods = numberOfPeriods;
   }
 
   public String getCustomerID() {
-    return customerID;
+    return customerId;
   }
 
-  public void setCustomerID(String customerID) {
-    this.customerID = customerID;
+  public void setCustomerID(String customerId) {
+    this.customerId = customerId;
   }
 
   public int getAmount() {

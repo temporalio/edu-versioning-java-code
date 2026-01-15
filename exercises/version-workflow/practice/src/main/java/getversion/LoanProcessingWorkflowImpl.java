@@ -8,6 +8,7 @@ import io.temporal.workflow.Workflow;
 import org.slf4j.Logger;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
 public class LoanProcessingWorkflowImpl implements LoanProcessingWorkflow {
@@ -26,7 +27,6 @@ public class LoanProcessingWorkflowImpl implements LoanProcessingWorkflow {
 
     String customerId = info.getCustomerID();
     int amount = info.getAmount();
-    String email = info.getEmailAddress();
     int numberOfPeriods = info.getNumberOfPeriods();
 
     int totalPaid = 0;

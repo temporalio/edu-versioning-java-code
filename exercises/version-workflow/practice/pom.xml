@@ -22,7 +22,7 @@
         <dependency>
             <groupId>io.temporal</groupId>
             <artifactId>temporal-sdk</artifactId>
-            <version>1.31.0</version>
+            <version>1.32.1</version>
         </dependency>
 
         <dependency>
@@ -40,14 +40,14 @@
         <dependency>
             <groupId>io.temporal</groupId>
             <artifactId>temporal-testing</artifactId>
-            <version>1.31.0</version>
+            <version>1.32.1</version>
             <scope>test</scope>
         </dependency>  
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.14.1</version>
+            <version>5.11.4</version>
             <scope>test</scope>
         </dependency>
     

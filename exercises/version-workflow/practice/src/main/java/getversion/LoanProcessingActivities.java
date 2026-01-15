@@ -7,8 +7,8 @@ import io.temporal.activity.ActivityInterface;
 @ActivityInterface
 public interface LoanProcessingActivities {
 
-  public String chargeCustomer(ChargeInput input);
+  String chargeCustomer(ChargeInput input);
 
-  public String sendThankYouToCustomer(CustomerInfo input);
+  String sendThankYouToCustomer(CustomerInfo input);
 
 }

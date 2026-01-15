@@ -8,6 +8,6 @@ import io.temporal.workflow.WorkflowMethod;
 public interface LoanProcessingWorkflow {
 
   @WorkflowMethod
-  public String loanProcessingWorkflow(CustomerInfo info);
+  String loanProcessingWorkflow(CustomerInfo info);
 
 }

@@ -22,7 +22,8 @@ public class Starter {
 
     WorkflowOptions options = WorkflowOptions.newBuilder()
         .setWorkflowId("loan-processing-workflow-customer-" + info.getCustomerID())
-        .setTaskQueue(Constants.taskQueueName).build();
+        .setTaskQueue(Constants.TASK_QUEUE_NAME)
+        .build();
 
     LoanProcessingWorkflow workflow = client.newWorkflowStub(LoanProcessingWorkflow.class, options);
 
