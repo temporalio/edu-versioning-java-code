@@ -27,7 +27,6 @@ public class LoanProcessingWorkflowImpl implements LoanProcessingWorkflow {
 
     String customerId = info.getCustomerID();
     int amount = info.getAmount();
-    String email = info.getEmailAddress();
     int numberOfPeriods = info.getNumberOfPeriods();
 
     int totalPaid = 0;
