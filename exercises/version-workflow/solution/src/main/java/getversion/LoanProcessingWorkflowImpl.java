@@ -17,10 +17,9 @@ public class LoanProcessingWorkflowImpl implements LoanProcessingWorkflow {
 
   public static final SearchAttributeKey<List<String>> TEMPORAL_CHANGE_VERSION = SearchAttributeKey.forKeywordList("TemporalChangeVersion");
 
-  ActivityOptions options =
-      ActivityOptions.newBuilder()
-        .setStartToCloseTimeout(Duration.ofSeconds(5))
-        .build();
+  ActivityOptions options = ActivityOptions.newBuilder()
+      .setStartToCloseTimeout(Duration.ofSeconds(5))
+      .build();
 
   private final LoanProcessingActivities activities =
       Workflow.newActivityStub(LoanProcessingActivities.class, options);
@@ -61,8 +60,7 @@ public class LoanProcessingWorkflowImpl implements LoanProcessingWorkflow {
     }
 
     if (version == 1) {
-      // for workflow executions started before the change, send thank you before the
-      // loop
+      // for workflow executions started before the change, send thank you before the loop
       String confirmation = activities.sendThankYouToCustomer(info);
     }
 
